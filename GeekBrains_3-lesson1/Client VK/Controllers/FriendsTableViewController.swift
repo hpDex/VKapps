@@ -17,6 +17,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
         makeNamesList()
         sortCharacterOfNamesAlphabet()
+        
+        GetDataFromVK().loadData(.namesAndAvatars)
     }
     
     let friendsList = [
@@ -157,11 +159,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         return header
     }
     
-    // хедер тайтл (заглавная буква имен) не работает, если используется "viewForHeaderInSection"
-    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return letersOfNames[section]
-    //    }
-    
+
     // список букв для навигации (справа контрол)
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return letersOfNames

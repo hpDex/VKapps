@@ -2,8 +2,8 @@
 //  NewsTableViewCell.swift
 //  Client VK
 //
-//  Created by DENIS FILIPPOV on 20.02.2022.
-//  Copyright © 2022 DENIS FILIPPOV. All rights reserved.
+//  Created by Denis Filippov on 21.02.2022.
+//  Copyright © 2022 Vasily Petuhov. All rights reserved.
 //
 
 import UIKit

@@ -50,25 +50,6 @@ class CustomNavigationController: UINavigationController, UINavigationController
     
 }
 
-// расширение для класса, можно и так использовать, а не дописывать сразу в класс
-//extension CustomNavigationController: UINavigationControllerDelegate{
-//
-//    // переходы по тапам на кнопки/поля
-//    func navigationController(
-//        _ navigationController: UINavigationController,
-//        animationControllerFor operation: UINavigationController.Operation,
-//        from fromVC: UIViewController,
-//        to toVC: UIViewController
-//    ) -> UIViewControllerAnimatedTransitioning? {
-//        if operation == .push {
-//            return animatorTwist90Push()
-//        } else if operation == .pop {
-//            return animatorTwist90Pop()
-//            //return nil
-//        }
-//        return nil // если ни тот вариант и ни другой (как такое может быть не понятно)
-//    }
-//}
 
 // анимация перехода впред через кнопку
 class animatorTwist90Push: NSObject, UIViewControllerAnimatedTransitioning {
