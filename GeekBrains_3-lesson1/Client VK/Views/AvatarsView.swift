@@ -28,7 +28,6 @@ import UIKit
     func tapOnView() {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
         recognizer.numberOfTapsRequired = 1 // сколько нажатий нужно
-        //recognizer.numberOfTouchesRequired = 1 // сколько пальцев надо прижать
         self.addGestureRecognizer(recognizer) //добавить наблюдение
     }
     
@@ -40,7 +39,6 @@ import UIKit
             self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8) // меняем размер вьюхи анимировано
         }, completion: { _ in
             self.transform = original // возврат состояния вьюхи на сохраненное значение
-            //self.transform = .identity // возврат состояния вьюхи
         })
     }
 
@@ -60,8 +58,6 @@ import UIKit
         layer.shadowOffset = CGSize.zero
         
         // настройка аватарки
-        //avatarImage.image = UIImage(named: "person1")
-        //avatarImage.image = UIImage(systemName: "person")
         avatarImage.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         avatarImage.contentMode = .scaleAspectFill
         avatarImage.layer.cornerRadius = CGFloat(self.frame.width / 2)

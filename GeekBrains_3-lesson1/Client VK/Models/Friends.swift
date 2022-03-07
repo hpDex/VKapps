@@ -9,8 +9,8 @@
 
 import UIKit
 
-struct User {
-    let userName: String
-    let userAvatar: UIImage?
-    let userPhotos: [UIImage?]
+struct Friends {
+    var userName: String
+    var userAvatar: String
+    let owner_id : String
 }
