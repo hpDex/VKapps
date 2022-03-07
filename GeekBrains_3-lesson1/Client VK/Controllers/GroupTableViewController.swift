@@ -10,9 +10,20 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
     
-    var myGroups = [
-        Group(groupName: "Самая лучшая группа", groupLogo: UIImage(named: "group1"))
-    ]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // получение данный json в зависимости от требования
+        GetGroupsList().loadData() { [weak self] (complition) in
+            DispatchQueue.main.async {
+                self?.myGroups = complition
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    var myGroups: [Groups] = []
+
     
 
     // MARK: - Table view data source
@@ -26,8 +37,12 @@ class GroupTableViewController: UITableViewController {
         
         cell.nameGroupLabel.text = myGroups[indexPath.row].groupName
         
-        let avatar = myGroups[indexPath.row].groupLogo //четко по массиву
-        cell.avatarGroupView.avatarImage.image = avatar
+        if let imgUrl = URL(string: myGroups[indexPath.row].groupLogo) {
+
+            
+            cell.avatarGroupView.avatarImage.load(url: imgUrl) // работает через extension UIImageView
+        }
+
         
         return cell
     }
@@ -36,7 +51,7 @@ class GroupTableViewController: UITableViewController {
         if editingStyle == .delete {
             myGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade) // не обязательно удалять строку, если используется reloadData()
-     
+            //tableView.reloadData()
         }
     }
     

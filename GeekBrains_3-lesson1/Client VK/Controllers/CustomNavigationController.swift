@@ -12,8 +12,6 @@ class CustomNavigationController: UINavigationController, UINavigationController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.delegate = self
-//        self.delegate = self
         delegate = self
     }
     
@@ -63,8 +61,6 @@ class animatorTwist90Push: NSObject, UIViewControllerAnimatedTransitioning {
         // надо бы проверять гуардами, так как может не быть этих контроллеров
         let source = transitionContext.viewController(forKey: .from)! //откуда переход (источник)
         let destination = transitionContext.viewController(forKey: .to)! //куда переход (цель)
-//        guard let source = transitionContext.viewController(forKey: .from) else { return }
-//        guard let destination = transitionContext.viewController(forKey: .to) else { return }
         
         let containerViewFrame = transitionContext.containerView.frame //контейнер (экран)
         
@@ -116,9 +112,7 @@ class animatorTwist90Pop: NSObject, UIViewControllerAnimatedTransitioning {
         // надо бы проверять гуардами, так как может не быть этих контроллеров
         let source = transitionContext.viewController(forKey: .from)! //откуда переход (источник)
         let destination = transitionContext.viewController(forKey: .to)! //куда переход (цель)
-//        guard let source = transitionContext.viewController(forKey: .from) else { return }
-//        guard let destination = transitionContext.viewController(forKey: .to) else { return }
-        
+
         let containerViewFrame = transitionContext.containerView.frame //контейнер (экран)
         
         let sourceViewFrame = CGRect( //это размеры и положение фрейма где окажется источник после анимации (справа)

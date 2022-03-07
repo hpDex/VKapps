@@ -45,8 +45,6 @@ import UIKit
         //self.frame = CGRect(x: 0, y: 0, width: 60, height: 20)
         
         // иконка сердечко
-//        let likeImgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//        likeImgView.image = UIImage(systemName: "heart")
         likeImgView.tintColor = colorNoLike
         likeImgView.layer.shadowColor = UIColor.gray.cgColor
         likeImgView.layer.shadowOpacity = 0.9
@@ -54,7 +52,6 @@ import UIKit
         likeImgView.layer.shadowOffset = CGSize.zero
         
         // количество лайков
-//        let labelLikes = UILabel(frame: CGRect(x: 23, y: 0, width: (frame.size.width - 23), height: 20))
         labelLikes.text = String(countLikes)
         labelLikes.textColor = colorNoLike
         labelLikes.font = .systemFont(ofSize: 18)

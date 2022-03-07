@@ -11,13 +11,8 @@ import UIKit
 
 class NewGroupTableViewController: UITableViewController {
 
-    var allGroups = [
-        Group(groupName: "Самая лучшая группа", groupLogo: UIImage(named: "group1")),
-        Group(groupName: "SWIFT для iOS", groupLogo: UIImage(named: "group2")),
-        Group(groupName: "Смешарики", groupLogo: UIImage(named: "group3")),
-        Group(groupName: "Веселые картинки", groupLogo: UIImage(named: "group4")),
-        Group(groupName: "Умные истории", groupLogo: UIImage(named: "group5"))
-    ]
+    var allGroups: [Groups] = []
+
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +23,6 @@ class NewGroupTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddGroup", for: indexPath)  as! NewGroupTableViewCell
 
         cell.nameNewGroupLabel.text = allGroups[indexPath.row].groupName
-        cell.avatarNewGroupView.avatarImage.image = allGroups[indexPath.row].groupLogo
 
         return cell
     }

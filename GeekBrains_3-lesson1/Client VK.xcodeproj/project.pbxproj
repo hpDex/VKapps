@@ -3,17 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4144848027C3834100BDFBCE /* GetDataFromVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144847F27C3834100BDFBCE /* GetDataFromVK.swift */; };
 		4144848427C396A000BDFBCE /* AuthVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848327C396A000BDFBCE /* AuthVKViewController.swift */; };
 		4144848727C39BFB00BDFBCE /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848627C39BFB00BDFBCE /* FriendsTableViewCell.swift */; };
 		4144848927C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848827C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift */; };
 		4144848B27C39C6500BDFBCE /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848A27C39C6500BDFBCE /* GroupTableViewCell.swift */; };
 		4144848D27C39C9000BDFBCE /* NewGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848C27C39C9000BDFBCE /* NewGroupTableViewCell.swift */; };
 		4144848F27C39CBF00BDFBCE /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848E27C39CBF00BDFBCE /* NewsTableViewCell.swift */; };
+		41E817F927CF61D000412250 /* UIImageView (load URL).swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E817F827CF61D000412250 /* UIImageView (load URL).swift */; };
+		41E817FB27CF62BC00412250 /* TestLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E817FA27CF62BC00412250 /* TestLoadData.swift */; };
+		41E817FF27CF633900412250 /* GetPhotosFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E817FE27CF633900412250 /* GetPhotosFriend.swift */; };
+		41E8180127CF636600412250 /* GetGroupsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8180027CF636600412250 /* GetGroupsList.swift */; };
+		41E8180327CF639600412250 /* GetFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8180227CF639600412250 /* GetFriendsList.swift */; };
+		41E8180627CF6A5900412250 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 41E8180527CF6A5900412250 /* Kingfisher */; };
 		D935F77C24768C8B00A9AF87 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D935F77B24768C8B00A9AF87 /* LikeControl.swift */; };
 		D941A5772481180500092CC0 /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941A5762481180500092CC0 /* LoadingAnimationView.swift */; };
 		D96DF50524557A47005CC3BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96DF50424557A47005CC3BA /* AppDelegate.swift */; };
@@ -38,13 +43,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4144847F27C3834100BDFBCE /* GetDataFromVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFromVK.swift; sourceTree = "<group>"; };
 		4144848327C396A000BDFBCE /* AuthVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVKViewController.swift; sourceTree = "<group>"; };
 		4144848627C39BFB00BDFBCE /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		4144848827C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		4144848A27C39C6500BDFBCE /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		4144848C27C39C9000BDFBCE /* NewGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupTableViewCell.swift; sourceTree = "<group>"; };
 		4144848E27C39CBF00BDFBCE /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		41E817F827CF61D000412250 /* UIImageView (load URL).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView (load URL).swift"; sourceTree = "<group>"; };
+		41E817FA27CF62BC00412250 /* TestLoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadData.swift; sourceTree = "<group>"; };
+		41E817FE27CF633900412250 /* GetPhotosFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosFriend.swift; sourceTree = "<group>"; };
+		41E8180027CF636600412250 /* GetGroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGroupsList.swift; sourceTree = "<group>"; };
+		41E8180227CF639600412250 /* GetFriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendsList.swift; sourceTree = "<group>"; };
 		D935F77B24768C8B00A9AF87 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		D941A5762481180500092CC0 /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 		D96DF50124557A47005CC3BA /* Client VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Client VK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E8180627CF6A5900412250 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +94,10 @@
 		4144848127C3848000BDFBCE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4144847F27C3834100BDFBCE /* GetDataFromVK.swift */,
+				41E817FA27CF62BC00412250 /* TestLoadData.swift */,
+				41E817FE27CF633900412250 /* GetPhotosFriend.swift */,
+				41E8180027CF636600412250 /* GetGroupsList.swift */,
+				41E8180227CF639600412250 /* GetFriendsList.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -169,6 +182,7 @@
 				4144848A27C39C6500BDFBCE /* GroupTableViewCell.swift */,
 				4144848C27C39C9000BDFBCE /* NewGroupTableViewCell.swift */,
 				4144848E27C39CBF00BDFBCE /* NewsTableViewCell.swift */,
+				41E817F827CF61D000412250 /* UIImageView (load URL).swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +203,9 @@
 			dependencies = (
 			);
 			name = "Client VK";
+			packageProductDependencies = (
+				41E8180527CF6A5900412250 /* Kingfisher */,
+			);
 			productName = "Client VK";
 			productReference = D96DF50124557A47005CC3BA /* Client VK.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +234,9 @@
 				Base,
 			);
 			mainGroup = D96DF4F824557A47005CC3BA;
+			packageReferences = (
+				41E8180427CF6A5900412250 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D96DF50224557A47005CC3BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,8 +267,10 @@
 				D9D11C8724C7334600525073 /* PostNews.swift in Sources */,
 				4144848F27C39CBF00BDFBCE /* NewsTableViewCell.swift in Sources */,
 				D935F77C24768C8B00A9AF87 /* LikeControl.swift in Sources */,
+				41E817F927CF61D000412250 /* UIImageView (load URL).swift in Sources */,
 				4144848D27C39C9000BDFBCE /* NewGroupTableViewCell.swift in Sources */,
 				D9D11C8924C86FC000525073 /* FriendsTableViewController.swift in Sources */,
+				41E8180327CF639600412250 /* GetFriendsList.swift in Sources */,
 				D96DF5192455BF19005CC3BA /* LoginFormController.swift in Sources */,
 				4144848927C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift in Sources */,
 				D9A5DAC324C5E237006D3E55 /* Friends.swift in Sources */,
@@ -259,16 +281,18 @@
 				D941A5772481180500092CC0 /* LoadingAnimationView.swift in Sources */,
 				D9F871DF2477D331000E8684 /* AvatarsView.swift in Sources */,
 				D9DC48EB2485232800251429 /* CloudAnimationView.swift in Sources */,
+				41E817FB27CF62BC00412250 /* TestLoadData.swift in Sources */,
 				D96DF50524557A47005CC3BA /* AppDelegate.swift in Sources */,
 				D96DF50724557A47005CC3BA /* SceneDelegate.swift in Sources */,
-				4144848027C3834100BDFBCE /* GetDataFromVK.swift in Sources */,
 				D98FD8E9246DD3DC0080057D /* GroupTableViewController.swift in Sources */,
+				41E817FF27CF633900412250 /* GetPhotosFriend.swift in Sources */,
 				4144848727C39BFB00BDFBCE /* FriendsTableViewCell.swift in Sources */,
 				D97587F3247C534400782638 /* NewsTableViewController.swift in Sources */,
 				D9DC48ED2485937A00251429 /* FriendsPhotosViewController.swift in Sources */,
 				D9E13E2124CAEB3E00370B7E /* Session.swift in Sources */,
 				D98FD8E5246DCF0E0080057D /* PhotosFriendCollectionViewController.swift in Sources */,
 				D9A5DAC524C5E325006D3E55 /* Groups.swift in Sources */,
+				41E8180127CF636600412250 /* GetGroupsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +496,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41E8180427CF6A5900412250 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41E8180527CF6A5900412250 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41E8180427CF6A5900412250 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D96DF4F924557A47005CC3BA /* Project object */;
 }
