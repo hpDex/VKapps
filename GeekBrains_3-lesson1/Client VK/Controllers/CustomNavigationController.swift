@@ -48,7 +48,6 @@ class CustomNavigationController: UINavigationController, UINavigationController
     
 }
 
-
 // анимация перехода впред через кнопку
 class animatorTwist90Push: NSObject, UIViewControllerAnimatedTransitioning {
     let duration = 1.0
@@ -61,6 +60,7 @@ class animatorTwist90Push: NSObject, UIViewControllerAnimatedTransitioning {
         // надо бы проверять гуардами, так как может не быть этих контроллеров
         let source = transitionContext.viewController(forKey: .from)! //откуда переход (источник)
         let destination = transitionContext.viewController(forKey: .to)! //куда переход (цель)
+
         
         let containerViewFrame = transitionContext.containerView.frame //контейнер (экран)
         
@@ -109,10 +109,11 @@ class animatorTwist90Pop: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        // надо бы проверять гуардами, так как может не быть этих контроллеров
+       
         let source = transitionContext.viewController(forKey: .from)! //откуда переход (источник)
         let destination = transitionContext.viewController(forKey: .to)! //куда переход (цель)
 
+        
         let containerViewFrame = transitionContext.containerView.frame //контейнер (экран)
         
         let sourceViewFrame = CGRect( //это размеры и положение фрейма где окажется источник после анимации (справа)
@@ -125,9 +126,7 @@ class animatorTwist90Pop: NSObject, UIViewControllerAnimatedTransitioning {
         let destinationViewFrame = source.view.frame // это фрейм где окажется цель после анимации
         
         transitionContext.containerView.addSubview(destination.view) // добавить в контейнер цель
-        //transitionContext.containerView.addSubview(source.view) // добавить в контейнер источник (чтобы он был над целью)
-        
-        //destination.view.transform = CGAffineTransform(rotationAngle: .pi/2) // переворот вью цели на 90градусов
+
         destination.view.frame = CGRect( //это размеры и положение фрейма цели перед анимацией (слева и повернут)
             x: -containerViewFrame.height,
             y: 0,
@@ -179,7 +178,6 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
             self.viewController?.navigationController?.popViewController(animated: true)
         case .changed:
             let translation = recognizer.translation(in: recognizer.view)
-            //let relativeTranslation = translation.x / (recognizer.view?.bounds.width ?? 1) //ломается анимашка с поворотом при свайпе, так как экран перевернут и ось Х это ось У
             let relativeTranslation = translation.y / (recognizer.view?.bounds.width ?? 1)
             let progress = max(0, min(1, relativeTranslation))
             
@@ -196,4 +194,3 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
         }
     }
 }
-

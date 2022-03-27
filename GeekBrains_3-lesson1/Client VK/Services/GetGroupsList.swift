@@ -7,27 +7,46 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct GroupsResponse: Decodable {
+struct GroupsResponse:  Decodable {
     var response: Response
     
     struct Response: Decodable {
         var count: Int
-        var items: [Items]
+        var items: [Item]
         
-        struct Items: Decodable {
-            var id: Int
+        struct Item: Decodable {
             var name: String
-            var screen_name: String
-            var photo_50: String
+            var logo: String  // уже тут нужно писать желаемые названия
+            
+            // не нужные в приложении поля, которые есть в json-е
+            //var id: Int
+            //var screen_name: String
+            //var photo_50: String
+            
+            // enum и init нужны если нужно иметь другие названия переменных в отличии от даннных в json
+            // например: logo = "photo_50" (я хочу: logo, а в jsone это: photo_50 )
+            // но все равно нужно указать другие значения, например: name (без уточнения)
+            enum CodingKeys: String, CodingKey {
+                case name
+                case logo = "photo_50"
+            }
+            
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+                name = try container.decode(String.self, forKey: .name)
+                logo = try container.decode(String.self, forKey: .logo)
+            }
         }
     }
+
 }
 
 class GetGroupsList {
     
     //данные для авторизации в ВК
-    func loadData(complition: @escaping ([Groups]) -> Void ) {
+    func loadData(complition: @escaping () -> Void ) {
         
         // Конфигурация по умолчанию
         let configuration = URLSessionConfiguration.default
@@ -43,32 +62,48 @@ class GetGroupsList {
             URLQueryItem(name: "user_id", value: String(Session.instance.userId)),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "access_token", value: Session.instance.token),
-            URLQueryItem(name: "v", value: "5.131")
+            URLQueryItem(name: "v", value: "5.122")
         ]
         
         // задача для запуска
         let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
-                        print("Запрос к API: \(urlConstructor.url!)")
+            //print("Запрос к API: \(urlConstructor.url!)")
             
             // в замыкании данные, полученные от сервера, мы преобразуем в json
             guard let data = data else { return }
             
             do {
                 let arrayGroups = try JSONDecoder().decode(GroupsResponse.self, from: data)
-                var fullGroupList: [Groups] = []
+                var grougList: [Group] = []
                 for i in 0...arrayGroups.response.items.count-1 {
                     let name = ((arrayGroups.response.items[i].name))
-                    let avatar = arrayGroups.response.items[i].photo_50
-                    fullGroupList.append(Groups.init(groupName: name, groupLogo: avatar))
+                    let logo = arrayGroups.response.items[i].logo
+                    grougList.append(Group.init(groupName: name, groupLogo: logo))
                 }
-                complition(fullGroupList)
+                
+                DispatchQueue.main.async {
+                    RealmOperations().saveGroupsToRealm(grougList)
+                    complition()
+                }
+                
             } catch let error {
                 print(error)
-                complition([])
+                complition()
             }
         }
         task.resume()
         
     }
+    
+//    func saveGroupsToRealm(_ grougList: [Group]) {
+//        do {
+//            let realm = try Realm()
+//            try realm.write{
+//                realm.add(grougList)
+//            }
+//        } catch {
+//            print(error)
+//        }
+//    }
     
 }

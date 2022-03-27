@@ -11,9 +11,9 @@ import UIKit
 class NewsTableViewController: UITableViewController {
     
     var newsList = [
-        PostNewsStruct(name: "Victor", avatar: UIImage(named: "person1"), date: "Вчера в 17:19", textNews: "Телеканал CBS в США утверждает, что Россия отдала приказ войскам о «вторжении» на Украину", textImage: UIImage(named: "news1")),
-        PostNewsStruct(name: "Валентин", avatar: UIImage(named: "person2"), date: "20.02.2022 в 14:08", textNews: "Более 53 тысяч беженцев из Донбасса пересекли границу России.", textImage: UIImage(named: "news2")),
-        PostNewsStruct(name: "Турин", avatar: UIImage(named: "person3"), date: "20.02.2019 в 14:08", textNews: "Блинкен: США ответят на действия России даже без полномасштабного «вторжения»", textImage: UIImage(named: "news3"))
+        PostNews(name: "Victor", avatar: UIImage(named: "person1"), date: "Вчера в 17:19", textNews: "Телеканал CBS в США утверждает, что Россия отдала приказ войскам о «вторжении» на Украину", textImage: UIImage(named: "news1")),
+        PostNews(name: "Валентин", avatar: UIImage(named: "person2"), date: "20.02.2022 в 14:08", textNews: "Более 53 тысяч беженцев из Донбасса пересекли границу России.", textImage: UIImage(named: "news2")),
+        PostNews(name: "Турин", avatar: UIImage(named: "person3"), date: "20.02.2019 в 14:08", textNews: "Блинкен: США ответят на действия России даже без полномасштабного «вторжения»", textImage: UIImage(named: "news3"))
     ]
 
 

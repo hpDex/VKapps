@@ -6,7 +6,6 @@
 //  Copyright © 2022 DENIS FILIPPOV. All rights reserved.
 //
 
-
 import UIKit
 
 class LoginFormController: UIViewController, UITextFieldDelegate {
@@ -15,7 +14,7 @@ class LoginFormController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         // клик по любому месту scrollView для скрытия клавиатуры - Жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
@@ -24,7 +23,7 @@ class LoginFormController: UIViewController, UITextFieldDelegate {
         // * делегаты для переноса фокуса на следующее поле ввода
         self.loginTextField.delegate = self
         self.passwordTextField.delegate = self
-    }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,6 +33,7 @@ class LoginFormController: UIViewController, UITextFieldDelegate {
         // Второе — когда она пропадает
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasHide(notification:)),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -86,7 +86,7 @@ class LoginFormController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction func loginPushButton(_ sender: Any) {
-// авторизация
+        // авторизация
         guard loginTextField.text == "admin" && passwordTextField.text == "123456" else {
             // Создаем контроллер для ошибки
             let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль!", preferredStyle: .alert)
@@ -106,7 +106,6 @@ class LoginFormController: UIViewController, UITextFieldDelegate {
         // проверка и действия
     }
     
- //   var friendsList: [Friends] = []
     @IBAction func authVKSuccessful​(segue:UIStoryboardSegue) {
         if segue.identifier == "AuthVKSuccessful"{
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { //задержка, чтобы отработал контроллер с логином (иначе краш)

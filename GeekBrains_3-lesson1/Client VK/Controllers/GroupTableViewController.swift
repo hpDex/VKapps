@@ -7,23 +7,23 @@
 //
 
 import UIKit
+import Kingfisher
+import RealmSwift
 
 class GroupTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // получение данный json в зависимости от требования
-        GetGroupsList().loadData() { [weak self] (complition) in
-            DispatchQueue.main.async {
-                self?.myGroups = complition
-                self?.tableView.reloadData()
-            }
+                
+        loadGroupsFromRealm() // загрузка данных из реалма (кэш) для первоначального отображения
+
+        // запуск обновления данных из сети, запись в Реалм и загрузка из реалма новых данных
+        GetGroupsList().loadData() { [weak self] () in
+            self?.loadGroupsFromRealm()
         }
     }
     
-    var myGroups: [Groups] = []
-
+    var myGroups: [Group] = []
     
 
     // MARK: - Table view data source
@@ -38,11 +38,12 @@ class GroupTableViewController: UITableViewController {
         cell.nameGroupLabel.text = myGroups[indexPath.row].groupName
         
         if let imgUrl = URL(string: myGroups[indexPath.row].groupLogo) {
-
+            let avatar = ImageResource(downloadURL: imgUrl) //работает через Kingfisher
+            cell.avatarGroupView.avatarImage.kf.indicatorType = .activity //работает через Kingfisher
+            cell.avatarGroupView.avatarImage.kf.setImage(with: avatar) //работает через Kingfisher
             
-            cell.avatarGroupView.avatarImage.load(url: imgUrl) // работает через extension UIImageView
+            //cell.avatarGroupView.avatarImage.load(url: imgUrl) // работает через extension UIImageView
         }
-
         
         return cell
     }
@@ -69,14 +70,29 @@ class GroupTableViewController: UITableViewController {
             // проверка индекса ячейки
             if let indexPath = newGroupFromController.tableView.indexPathForSelectedRow {
                 //добавить новой группы в мои группы из общего списка групп
-                let newGroup = newGroupFromController.allGroups[indexPath.row]
+                let newGroup = newGroupFromController.GroupsList[indexPath.row]
                 
-                // проверка что группа уже в списке (нужен Equatable)
-                guard !myGroups.contains(newGroup) else { return }
+//                // проверка что группа уже в списке (нужен Equatable)
+                guard !myGroups.description.contains(newGroup.groupName) else { return }
+
                 myGroups.append(newGroup)
                 
                 tableView.reloadData()
             }
+        }
+    }
+    
+    // MARK: - functions
+    
+    func loadGroupsFromRealm() {
+        do {
+            let realm = try Realm()
+            let groupsFromRealm = realm.objects(Group.self)
+            myGroups = Array(groupsFromRealm)
+            guard groupsFromRealm.count != 0 else { return } // проверка, что в реалме что-то есть
+            tableView.reloadData()
+        } catch {
+            print(error)
         }
     }
 
