@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4127FCD127ECC0A2006A951A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4127FCD027ECC0A2006A951A /* Kingfisher */; };
+		4127FCD427ECC0CD006A951A /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4127FCD327ECC0CD006A951A /* SwiftKeychainWrapper */; };
+		4127FCD727ECC11B006A951A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4127FCD627ECC11B006A951A /* Realm */; };
+		4127FCD927ECC11B006A951A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4127FCD827ECC11B006A951A /* RealmSwift */; };
 		4144848427C396A000BDFBCE /* AuthVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848327C396A000BDFBCE /* AuthVKViewController.swift */; };
 		4144848727C39BFB00BDFBCE /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848627C39BFB00BDFBCE /* FriendsTableViewCell.swift */; };
 		4144848927C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848827C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift */; };
 		4144848B27C39C6500BDFBCE /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848A27C39C6500BDFBCE /* GroupTableViewCell.swift */; };
 		4144848D27C39C9000BDFBCE /* NewGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848C27C39C9000BDFBCE /* NewGroupTableViewCell.swift */; };
 		4144848F27C39CBF00BDFBCE /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144848E27C39CBF00BDFBCE /* NewsTableViewCell.swift */; };
+		417A1DEC27D8F2D0003DF7FB /* SearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417A1DEB27D8F2D0003DF7FB /* SearchGroup.swift */; };
+		417A1DEE27D8F329003DF7FB /* RealmOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417A1DED27D8F329003DF7FB /* RealmOperations.swift */; };
+		417A1DF027D90884003DF7FB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417A1DEF27D90884003DF7FB /* Photo.swift */; };
+		417A1DF227D92359003DF7FB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417A1DF127D92359003DF7FB /* WebKit.framework */; };
 		41E817F927CF61D000412250 /* UIImageView (load URL).swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E817F827CF61D000412250 /* UIImageView (load URL).swift */; };
-		41E817FB27CF62BC00412250 /* TestLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E817FA27CF62BC00412250 /* TestLoadData.swift */; };
 		41E817FF27CF633900412250 /* GetPhotosFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E817FE27CF633900412250 /* GetPhotosFriend.swift */; };
 		41E8180127CF636600412250 /* GetGroupsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8180027CF636600412250 /* GetGroupsList.swift */; };
 		41E8180327CF639600412250 /* GetFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8180227CF639600412250 /* GetFriendsList.swift */; };
-		41E8180627CF6A5900412250 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 41E8180527CF6A5900412250 /* Kingfisher */; };
+		63968843D639A5FC051BD792 /* Pods_Client_VK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88A4F5E690A899C91CD428A /* Pods_Client_VK.framework */; };
 		D935F77C24768C8B00A9AF87 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D935F77B24768C8B00A9AF87 /* LikeControl.swift */; };
 		D941A5772481180500092CC0 /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D941A5762481180500092CC0 /* LoadingAnimationView.swift */; };
 		D96DF50524557A47005CC3BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96DF50424557A47005CC3BA /* AppDelegate.swift */; };
@@ -31,8 +38,8 @@
 		D98FD8E5246DCF0E0080057D /* PhotosFriendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FD8E4246DCF0E0080057D /* PhotosFriendCollectionViewController.swift */; };
 		D98FD8E9246DD3DC0080057D /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FD8E8246DD3DC0080057D /* GroupTableViewController.swift */; };
 		D98FD8ED246E818B0080057D /* NewGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FD8EC246E818B0080057D /* NewGroupTableViewController.swift */; };
-		D9A5DAC324C5E237006D3E55 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5DAC224C5E237006D3E55 /* Friends.swift */; };
-		D9A5DAC524C5E325006D3E55 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5DAC424C5E325006D3E55 /* Groups.swift */; };
+		D9A5DAC324C5E237006D3E55 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5DAC224C5E237006D3E55 /* Friend.swift */; };
+		D9A5DAC524C5E325006D3E55 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5DAC424C5E325006D3E55 /* Group.swift */; };
 		D9D11C8724C7334600525073 /* PostNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D11C8624C7334600525073 /* PostNews.swift */; };
 		D9D11C8924C86FC000525073 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D11C8824C86FC000525073 /* FriendsTableViewController.swift */; };
 		D9DC48EB2485232800251429 /* CloudAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DC48EA2485232800251429 /* CloudAnimationView.swift */; };
@@ -43,17 +50,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		396E999DF90F074AE3FD4DAF /* Pods-Client VK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client VK.release.xcconfig"; path = "Target Support Files/Pods-Client VK/Pods-Client VK.release.xcconfig"; sourceTree = "<group>"; };
+		4127FCC127ECC027006A951A /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4127FCC527ECC02E006A951A /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4127FCC827ECC037006A951A /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4127FCCB27ECC083006A951A /* realm-monorepo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "realm-monorepo.xcframework"; path = "Pods/Realm/core/realm-monorepo.xcframework"; sourceTree = "<group>"; };
 		4144848327C396A000BDFBCE /* AuthVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVKViewController.swift; sourceTree = "<group>"; };
 		4144848627C39BFB00BDFBCE /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		4144848827C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		4144848A27C39C6500BDFBCE /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		4144848C27C39C9000BDFBCE /* NewGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupTableViewCell.swift; sourceTree = "<group>"; };
 		4144848E27C39CBF00BDFBCE /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		417A1DEB27D8F2D0003DF7FB /* SearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroup.swift; sourceTree = "<group>"; };
+		417A1DED27D8F329003DF7FB /* RealmOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmOperations.swift; sourceTree = "<group>"; };
+		417A1DEF27D90884003DF7FB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		417A1DF127D92359003DF7FB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		41E817F827CF61D000412250 /* UIImageView (load URL).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView (load URL).swift"; sourceTree = "<group>"; };
-		41E817FA27CF62BC00412250 /* TestLoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadData.swift; sourceTree = "<group>"; };
 		41E817FE27CF633900412250 /* GetPhotosFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosFriend.swift; sourceTree = "<group>"; };
 		41E8180027CF636600412250 /* GetGroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGroupsList.swift; sourceTree = "<group>"; };
 		41E8180227CF639600412250 /* GetFriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendsList.swift; sourceTree = "<group>"; };
+		850311AF8AD0FD63728692AD /* Pods-Client VK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client VK.debug.xcconfig"; path = "Target Support Files/Pods-Client VK/Pods-Client VK.debug.xcconfig"; sourceTree = "<group>"; };
 		D935F77B24768C8B00A9AF87 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		D941A5762481180500092CC0 /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 		D96DF50124557A47005CC3BA /* Client VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Client VK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +84,8 @@
 		D98FD8E4246DCF0E0080057D /* PhotosFriendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFriendCollectionViewController.swift; sourceTree = "<group>"; };
 		D98FD8E8246DD3DC0080057D /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		D98FD8EC246E818B0080057D /* NewGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupTableViewController.swift; sourceTree = "<group>"; };
-		D9A5DAC224C5E237006D3E55 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
-		D9A5DAC424C5E325006D3E55 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
+		D9A5DAC224C5E237006D3E55 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		D9A5DAC424C5E325006D3E55 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		D9D11C8624C7334600525073 /* PostNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNews.swift; sourceTree = "<group>"; };
 		D9D11C8824C86FC000525073 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		D9DC48EA2485232800251429 /* CloudAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAnimationView.swift; sourceTree = "<group>"; };
@@ -77,6 +93,7 @@
 		D9E13E2024CAEB3E00370B7E /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		D9F871DE2477D331000E8684 /* AvatarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarsView.swift; sourceTree = "<group>"; };
 		D9FC1D5A2489392700AC8217 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		E88A4F5E690A899C91CD428A /* Pods_Client_VK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Client_VK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E8180627CF6A5900412250 /* Kingfisher in Frameworks */,
+				4127FCD927ECC11B006A951A /* RealmSwift in Frameworks */,
+				4127FCD127ECC0A2006A951A /* Kingfisher in Frameworks */,
+				417A1DF227D92359003DF7FB /* WebKit.framework in Frameworks */,
+				4127FCD427ECC0CD006A951A /* SwiftKeychainWrapper in Frameworks */,
+				63968843D639A5FC051BD792 /* Pods_Client_VK.framework in Frameworks */,
+				4127FCD727ECC11B006A951A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +116,11 @@
 		4144848127C3848000BDFBCE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				41E817FA27CF62BC00412250 /* TestLoadData.swift */,
 				41E817FE27CF633900412250 /* GetPhotosFriend.swift */,
 				41E8180027CF636600412250 /* GetGroupsList.swift */,
 				41E8180227CF639600412250 /* GetFriendsList.swift */,
+				417A1DEB27D8F2D0003DF7FB /* SearchGroup.swift */,
+				417A1DED27D8F329003DF7FB /* RealmOperations.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -129,11 +152,35 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		93DE1C0EB31AE8CC4FB34838 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				850311AF8AD0FD63728692AD /* Pods-Client VK.debug.xcconfig */,
+				396E999DF90F074AE3FD4DAF /* Pods-Client VK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B09503519B7A46C26F632634 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4127FCCB27ECC083006A951A /* realm-monorepo.xcframework */,
+				4127FCC827ECC037006A951A /* RealmSwift.framework */,
+				4127FCC527ECC02E006A951A /* SwiftKeychainWrapper.framework */,
+				4127FCC127ECC027006A951A /* Realm.framework */,
+				417A1DF127D92359003DF7FB /* WebKit.framework */,
+				E88A4F5E690A899C91CD428A /* Pods_Client_VK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D96DF4F824557A47005CC3BA = {
 			isa = PBXGroup;
 			children = (
 				D96DF50324557A47005CC3BA /* Client VK */,
 				D96DF50224557A47005CC3BA /* Products */,
+				93DE1C0EB31AE8CC4FB34838 /* Pods */,
+				B09503519B7A46C26F632634 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,9 +198,9 @@
 				D96DF50A24557A47005CC3BA /* Main.storyboard */,
 				D96DF50F24557A4B005CC3BA /* LaunchScreen.storyboard */,
 				4144848227C387AF00BDFBCE /* App */,
+				4144848527C3977700BDFBCE /* Controllers */,
 				4144848127C3848000BDFBCE /* Services */,
 				D9A5DAC124C5E21E006D3E55 /* Models */,
-				4144848527C3977700BDFBCE /* Controllers */,
 				D9FB6E15246D7CAE00F16C31 /* Views */,
 			);
 			path = "Client VK";
@@ -162,10 +209,11 @@
 		D9A5DAC124C5E21E006D3E55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9A5DAC224C5E237006D3E55 /* Friends.swift */,
-				D9A5DAC424C5E325006D3E55 /* Groups.swift */,
+				D9A5DAC224C5E237006D3E55 /* Friend.swift */,
+				D9A5DAC424C5E325006D3E55 /* Group.swift */,
 				D9D11C8624C7334600525073 /* PostNews.swift */,
 				D9E13E2024CAEB3E00370B7E /* Session.swift */,
+				417A1DEF27D90884003DF7FB /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D96DF51524557A4B005CC3BA /* Build configuration list for PBXNativeTarget "Client VK" */;
 			buildPhases = (
+				9C8FA810534BB87C3B19BCBD /* [CP] Check Pods Manifest.lock */,
 				D96DF4FD24557A47005CC3BA /* Sources */,
 				D96DF4FE24557A47005CC3BA /* Frameworks */,
 				D96DF4FF24557A47005CC3BA /* Resources */,
+				3FDA7764D5C73A10745C6730 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,7 +254,10 @@
 			);
 			name = "Client VK";
 			packageProductDependencies = (
-				41E8180527CF6A5900412250 /* Kingfisher */,
+				4127FCD027ECC0A2006A951A /* Kingfisher */,
+				4127FCD327ECC0CD006A951A /* SwiftKeychainWrapper */,
+				4127FCD627ECC11B006A951A /* Realm */,
+				4127FCD827ECC11B006A951A /* RealmSwift */,
 			);
 			productName = "Client VK";
 			productReference = D96DF50124557A47005CC3BA /* Client VK.app */;
@@ -235,7 +288,9 @@
 			);
 			mainGroup = D96DF4F824557A47005CC3BA;
 			packageReferences = (
-				41E8180427CF6A5900412250 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4127FCCF27ECC0A2006A951A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4127FCD227ECC0CD006A951A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				4127FCD527ECC11B006A951A /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = D96DF50224557A47005CC3BA /* Products */;
 			projectDirPath = "";
@@ -259,6 +314,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3FDA7764D5C73A10745C6730 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Client VK/Pods-Client VK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Client VK/Pods-Client VK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Client VK/Pods-Client VK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C8FA810534BB87C3B19BCBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Client VK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D96DF4FD24557A47005CC3BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,19 +366,20 @@
 				D935F77C24768C8B00A9AF87 /* LikeControl.swift in Sources */,
 				41E817F927CF61D000412250 /* UIImageView (load URL).swift in Sources */,
 				4144848D27C39C9000BDFBCE /* NewGroupTableViewCell.swift in Sources */,
+				417A1DEE27D8F329003DF7FB /* RealmOperations.swift in Sources */,
 				D9D11C8924C86FC000525073 /* FriendsTableViewController.swift in Sources */,
 				41E8180327CF639600412250 /* GetFriendsList.swift in Sources */,
 				D96DF5192455BF19005CC3BA /* LoginFormController.swift in Sources */,
 				4144848927C39C3C00BDFBCE /* PhotosFriendCollectionViewCell.swift in Sources */,
-				D9A5DAC324C5E237006D3E55 /* Friends.swift in Sources */,
+				D9A5DAC324C5E237006D3E55 /* Friend.swift in Sources */,
 				4144848B27C39C6500BDFBCE /* GroupTableViewCell.swift in Sources */,
 				D98FD8ED246E818B0080057D /* NewGroupTableViewController.swift in Sources */,
 				D9FC1D5B2489392700AC8217 /* CustomNavigationController.swift in Sources */,
 				4144848427C396A000BDFBCE /* AuthVKViewController.swift in Sources */,
 				D941A5772481180500092CC0 /* LoadingAnimationView.swift in Sources */,
 				D9F871DF2477D331000E8684 /* AvatarsView.swift in Sources */,
+				417A1DF027D90884003DF7FB /* Photo.swift in Sources */,
 				D9DC48EB2485232800251429 /* CloudAnimationView.swift in Sources */,
-				41E817FB27CF62BC00412250 /* TestLoadData.swift in Sources */,
 				D96DF50524557A47005CC3BA /* AppDelegate.swift in Sources */,
 				D96DF50724557A47005CC3BA /* SceneDelegate.swift in Sources */,
 				D98FD8E9246DD3DC0080057D /* GroupTableViewController.swift in Sources */,
@@ -291,8 +389,9 @@
 				D9DC48ED2485937A00251429 /* FriendsPhotosViewController.swift in Sources */,
 				D9E13E2124CAEB3E00370B7E /* Session.swift in Sources */,
 				D98FD8E5246DCF0E0080057D /* PhotosFriendCollectionViewController.swift in Sources */,
-				D9A5DAC524C5E325006D3E55 /* Groups.swift in Sources */,
+				D9A5DAC524C5E325006D3E55 /* Group.swift in Sources */,
 				41E8180127CF636600412250 /* GetGroupsList.swift in Sources */,
+				417A1DEC27D8F2D0003DF7FB /* SearchGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +535,7 @@
 		};
 		D96DF51624557A4B005CC3BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 850311AF8AD0FD63728692AD /* Pods-Client VK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -456,6 +556,7 @@
 		};
 		D96DF51724557A4B005CC3BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396E999DF90F074AE3FD4DAF /* Pods-Client VK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -498,9 +599,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		41E8180427CF6A5900412250 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		4127FCCF27ECC0A2006A951A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		4127FCD227ECC0CD006A951A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		4127FCD527ECC11B006A951A /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -509,10 +626,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		41E8180527CF6A5900412250 /* Kingfisher */ = {
+		4127FCD027ECC0A2006A951A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 41E8180427CF6A5900412250 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 4127FCCF27ECC0A2006A951A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		4127FCD327ECC0CD006A951A /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4127FCD227ECC0CD006A951A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+		4127FCD627ECC11B006A951A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4127FCD527ECC11B006A951A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		4127FCD827ECC11B006A951A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4127FCD527ECC11B006A951A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
