@@ -6,7 +6,6 @@ target 'Client VK' do
   use_frameworks!
 
   # Pods for Client VK
-	pod 'RealmSwift'
-	pod 'SwiftKeychainWrapper'
+	pod 'Firebase/Database'
 
 end
