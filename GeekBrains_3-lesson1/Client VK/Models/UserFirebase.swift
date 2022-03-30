@@ -1,8 +1,8 @@
 //
-//  FriendFirebase.swift
+//  UserFirebase.swift
 //  Client VK
 //
-//  Created by Denis Filippov on 30.03.2022.
+//  Created by Denis Filippov on 27.03.2022.
 //  Copyright © 2022 Vasily Petuhov. All rights reserved.
 //
 

@@ -19,7 +19,7 @@ class GroupTableViewController: UITableViewController {
         subscribeToNotificationRealm() // загрузка данных из реалма (кэш) для первоначального отображения
 
         // запуск обновления данных из сети, запись в Реалм и загрузка из реалма новых данных
-        GetGroupsList().loadData(complition: () -> Void)
+        GetGroupsList().loadData()
     }
     
     var realm: Realm = {
@@ -76,10 +76,7 @@ class GroupTableViewController: UITableViewController {
                 print(error)
             }
             
-            // удаление группы только из таблицы (не нужно, так как данные берутся из Реалма)
-            //            myGroups.remove(at: indexPath.row)
-            //            tableView.deleteRows(at: [indexPath], with: .fade) // не обязательно удалять строку, если используется reloadData()
-            //tableView.reloadData()
+
         }
     }
     
@@ -100,15 +97,7 @@ class GroupTableViewController: UITableViewController {
             case .update:
                 self?.loadGroupsFromRealm()
 
-                //self?.tableView.beginUpdates()
-                
-                // крашится при вызове, так как не попадает в секции, надо перерабатывать логику
-                //self?.tableView.deleteRows(at: deletions.map{ IndexPath(row: $0, section: 0) }, with: .automatic)
-                //self?.tableView.insertRows(at: insertions.map{ IndexPath(row: $0, section: 0) }, with: .automatic)
-                //self?.tableView.reloadRows(at: modifications.map{ IndexPath(row: $0, section: 0) }, with: .automatic)
-                
-                //self?.tableView.endUpdates()
-                
+ 
 
             case let .error(error):
                 print(error)

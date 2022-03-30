@@ -51,7 +51,7 @@ struct PhotosResponse: Decodable {
 class GetPhotosFriend {
     
     //данные для авторизации в ВК
-    func loadData(_ ownerID: String, complition: @escaping () -> Void ) {
+    func loadData(_ ownerID: String) {
         
         // Конфигурация по умолчанию
         let configuration = URLSessionConfiguration.default
@@ -66,7 +66,7 @@ class GetPhotosFriend {
         urlConstructor.queryItems = [
             URLQueryItem(name: "owner_id", value: ownerID),
             URLQueryItem(name: "access_token", value: Session.instance.token),
-            URLQueryItem(name: "v", value: "5.131")
+            URLQueryItem(name: "v", value: "5.122")
         ]
               
         // задача для запуска
@@ -83,17 +83,16 @@ class GetPhotosFriend {
 
                 for i in 0...arrayPhotosFriend.response.items.count-1 {
                     if let urlPhoto = arrayPhotosFriend.response.items[i].sizes.last?.url {
+                        //ownerID = String(arrayPhotosFriend.response.items[i].owner_id)
                         ownerID = String(arrayPhotosFriend.response.items[i].ownerID)
                         photosFriend.append(Photo.init(photo: urlPhoto, ownerID: ownerID))
                     }
                 }
                 DispatchQueue.main.async {
                     RealmOperations().savePhotosToRealm(photosFriend, ownerID)
-                    complition()
                 }
             } catch let error {
                 print(error)
-                complition()
             }
         }
         task.resume()

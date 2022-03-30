@@ -23,6 +23,12 @@ class AuthVKViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     
+    // MARK: - Firebase
+    
+//    lazy var database = Database.database()
+//    lazy var ref: DatabaseReference = self.database.reference(withPath: "All logged users")
+    
+    // MARK: - Functions
     func loadAuthVK() {
         // конструктор для URL
         var urlConstructor = URLComponents()
@@ -68,6 +74,7 @@ extension AuthVKViewController: WKNavigationDelegate {
             decisionHandler(.allow)
             return
         }
+        //print(fragment)
         
         let params = fragment
             .components(separatedBy: "&")
@@ -80,6 +87,7 @@ extension AuthVKViewController: WKNavigationDelegate {
                 return dict
         }
         
+        //DispatchQueue.main.async {
             if let token = params["access_token"], let userID = params["user_id"], let expiresIn = params["expires_in"] {
                 self.session.token = token
                 self.session.userId = Int(userID) ?? 0

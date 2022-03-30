@@ -7,5 +7,6 @@ target 'Client VK' do
 
   # Pods for Client VK
 	pod 'Firebase/Database'
+	pod 'Firebase/Core'
 
 end
