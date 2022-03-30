@@ -46,7 +46,7 @@ struct GroupsResponse:  Decodable {
 class GetGroupsList {
     
     //данные для авторизации в ВК
-    func loadData(complition: @escaping () -> Void ) {
+    func loadData() {
         
         // Конфигурация по умолчанию
         let configuration = URLSessionConfiguration.default
@@ -62,7 +62,7 @@ class GetGroupsList {
             URLQueryItem(name: "user_id", value: String(Session.instance.userId)),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "access_token", value: Session.instance.token),
-            URLQueryItem(name: "v", value: "5.122")
+            URLQueryItem(name: "v", value: "5.131")
         ]
         
         // задача для запуска
@@ -83,27 +83,13 @@ class GetGroupsList {
                 
                 DispatchQueue.main.async {
                     RealmOperations().saveGroupsToRealm(grougList)
-                    complition()
                 }
                 
             } catch let error {
                 print(error)
-                complition()
             }
         }
         task.resume()
         
     }
-    
-//    func saveGroupsToRealm(_ grougList: [Group]) {
-//        do {
-//            let realm = try Realm()
-//            try realm.write{
-//                realm.add(grougList)
-//            }
-//        } catch {
-//            print(error)
-//        }
-//    }
-    
 }

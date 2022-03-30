@@ -29,7 +29,7 @@ class SearchGroup {
             URLQueryItem(name: "q", value: searchText),
             URLQueryItem(name: "type", value: "group"),
             URLQueryItem(name: "access_token", value: Session.instance.token),
-            URLQueryItem(name: "v", value: "5.122")
+            URLQueryItem(name: "v", value: "5.131")
         ]
         
         // задача для запуска
@@ -42,11 +42,13 @@ class SearchGroup {
             do {
                 let arrayGroups = try JSONDecoder().decode(GroupsResponse.self, from: data)
                 var searchGroup: [Group] = []
+                
                 for i in 0...arrayGroups.response.items.count-1 {
                     let name = ((arrayGroups.response.items[i].name))
                     let logo = arrayGroups.response.items[i].logo
                     searchGroup.append(Group.init(groupName: name, groupLogo: logo))
                 }
+                
                 complition(searchGroup)
             } catch let error {
                 print(error)

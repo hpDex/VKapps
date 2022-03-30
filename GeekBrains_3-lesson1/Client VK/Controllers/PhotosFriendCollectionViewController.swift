@@ -15,17 +15,30 @@ class PhotosFriendCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPhotosFromRealm() // загрузка данных из реалма (кэш) для первоначального отображения
+        subscribeToNotificationRealm()
         
         // запуск обновления данных из сети, запись в Реалм и загрузка из реалма новых данных
-        GetPhotosFriend().loadData(ownerID) { [weak self] () in
-            self?.loadPhotosFromRealm()
-        }
-
+        GetPhotosFriend().loadData(ownerID)
     }
+    
+    var realm: Realm = {
+        let configrealm = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: configrealm)
+        return realm
+    }()
+    
+    lazy var photosFromRealm: Results<Photo> = {
+        return realm.objects(Photo.self).filter("ownerID == %@", ownerID)
+    }()
+    
+    var notificationToken: NotificationToken?
+    
     
     var ownerID = ""
     var collectionPhotos: [Photo] = []
+    
+    
+    // MARK: - TableView
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionPhotos.count
@@ -44,7 +57,33 @@ class PhotosFriendCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: - segue
+    
+    // MARK: - Functions
+    
+    private func subscribeToNotificationRealm() {
+        notificationToken = photosFromRealm.observe { [weak self] (changes) in
+            switch changes {
+            case .initial:
+                self?.loadPhotosFromRealm()
+            //case let .update (_, deletions, insertions, modifications):
+            case .update:
+                self?.loadPhotosFromRealm()
+
+            case let .error(error):
+                print(error)
+            }
+        }
+    }
+    
+    func loadPhotosFromRealm() {
+            collectionPhotos = Array(photosFromRealm)
+            guard collectionPhotos.count != 0 else { return } // проверка, что в реалме что-то есть
+            collectionView.reloadData()
+    }
+    
+    
+    // MARK: - Segue
+    
     // переход на контроллер с отображением крупной фотографии
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -57,20 +96,6 @@ class PhotosFriendCollectionViewController: UICollectionViewController {
                 photosFriend.allPhotos = collectionPhotos //фотки
                 photosFriend.countCurentPhoto = indexPath.row // можно указать (indexPath[0][1]) или использовать (?.first) как сделано выше
             }
-        }
-    }
-    
-    // MARK: - functions
-    
-    func loadPhotosFromRealm() {
-        do {
-            let realm = try Realm()
-            let photosFromRealm = realm.objects(Photo.self).filter("ownerID == %@", ownerID)
-            collectionPhotos = Array(photosFromRealm)
-            guard collectionPhotos.count != 0 else { return } // проверка, что в реалме что-то есть
-            collectionView.reloadData()
-        } catch {
-            print(error)
         }
     }
     
