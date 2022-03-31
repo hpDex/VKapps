@@ -16,7 +16,9 @@ class FriendsPhotosViewController: UIViewController {
         
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan))
         view.addGestureRecognizer(recognizer)
-
+        
+        //photoCurent.load(url: URL(string: allPhotos[countCurentPhoto])!)
+        //let xxx = allPhotos[countCurentPhoto].photo
         photoCurent.kf.setImage(with: URL(string: allPhotos[countCurentPhoto].photo)) //работает через Kingfisher (с кэшем)
 
     }

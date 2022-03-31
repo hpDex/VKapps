@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class SearchGroup {
     
     //данные для авторизации в ВК
@@ -29,7 +27,7 @@ class SearchGroup {
             URLQueryItem(name: "q", value: searchText),
             URLQueryItem(name: "type", value: "group"),
             URLQueryItem(name: "access_token", value: Session.instance.token),
-            URLQueryItem(name: "v", value: "5.131")
+            URLQueryItem(name: "v", value: "5.122")
         ]
         
         // задача для запуска
@@ -46,7 +44,8 @@ class SearchGroup {
                 for i in 0...arrayGroups.response.items.count-1 {
                     let name = ((arrayGroups.response.items[i].name))
                     let logo = arrayGroups.response.items[i].logo
-                    searchGroup.append(Group.init(groupName: name, groupLogo: logo))
+                    let id = arrayGroups.response.items[i].id
+                    searchGroup.append(Group.init(groupName: name, groupLogo: logo, id: id))
                 }
                 
                 complition(searchGroup)
